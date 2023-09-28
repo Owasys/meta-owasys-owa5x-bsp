@@ -1,0 +1,40 @@
+{
+   "name": "mqtt",
+   "lib":"libiconn-mqtt.so",
+   "connection": {
+      "host" : "127.0.0.1",
+      "port": 8883,
+      "qos": 1,
+      "ack": 1,
+      "keepalive": 900,
+      "trustfile":"",
+      "connect":{
+         "retry_factor": 3,
+         "timeout": 10,
+         "clean": true,
+         "will":{
+            "topic": "your_will_topic",
+            "message": "message",
+            "retain": true
+         }
+      },
+      "tcp":{
+         "idle": 300,
+         "keepinterval": 15,
+         "keepcount": 2
+      },
+      "auth":{
+         "client_id":"testClientId",
+         "certfile": "",
+         "user": "user",
+         "pass": "pass"
+      }
+   },
+   "redis":{
+      "socket":"/tmp/redis.sock"
+   },
+   "subs": [{ "topic":"v1/device/mx/attributes","queue": "q-in","protocol":"N"},
+            { "topic":"v1/device/mx/attributes","queue": "q-in","protocol":"rx"}],
+   "pubs":[{"topic":"v1/devices/request","queue":"redis-queue to get data from", "len":20,"scan": 10, "protocol":"base64"},
+              {"topic":"$imei/$serial","queue":"redis-queue to get data from", "len":20,"scan": 10, "protocol":"base64"}]
+}

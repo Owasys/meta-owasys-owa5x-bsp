@@ -1,0 +1,16 @@
+# Other valid fields: BUILD_ID ID_LIKE ANSI_COLOR CPE_NAME
+#                     HOME_URL SUPPORT_URL BUG_REPORT_URL
+OS_RELEASE_FIELDS += "\
+    HOME_URL \
+    SUPPORT_URL \
+    META_OWASYS_VARIANT \
+"
+OS_RELEASE_UNQUOTED_FIELDS += "\
+    MACHINE_ID \
+"
+
+NAME = "kirkstone"
+MACHINE_ID = "${MACHINE}"
+META_OWASYS_VARIANT = "${MACHINE}-${OS_ID}-${DISTRO_VERSION}"
+HOME_URL = "https://www.owasys.com"
+SUPPORT_URL = "mailto:cs@owasys.com"

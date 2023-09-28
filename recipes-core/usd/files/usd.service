@@ -1,0 +1,11 @@
+[Unit]
+Description = Usd service, a service to flash the device
+Wants   = pmsrv.service
+After   = pmsrv.service
+
+[Service]
+ExecStart   =   /home/custom_actions.sh
+
+[Install]
+Alias       =   owasysd-usd.service
+WantedBy    =   multi-user.target

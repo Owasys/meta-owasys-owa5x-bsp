@@ -1,0 +1,19 @@
+{
+   "name" : "pollux-net",
+   "cycle": 1000, 
+   "internet"  : true,
+   "ping"      :  300,
+   "connections"  :  ["8.8.8.8", "4.4.4.4"],
+   "interfaces": {
+      "wan"       :{
+         "name"         :  "ppp0",
+         "enable"       :  true,
+         "file"         :  "/etc/pollux/apn.json",
+         "internet"     :  true,
+         "code"         :  "",
+         "whitelist"    :  "",
+         "restart_me_algo": 0,
+         "stats"        : "/data/stats"
+      }
+   }
+}

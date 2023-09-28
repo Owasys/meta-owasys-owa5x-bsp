@@ -1,0 +1,66 @@
+From 26f4511aade0658314c9e758d198192e42c7c97f Mon Sep 17 00:00:00 2001
+From: Angel Falcon <angel.falcon@owasys.com>
+Date: Tue, 5 Sep 2023 15:44:48 +0200
+Subject: [PATCH 2/2] V1.0.8. Fix 2GB/4GB compatible
+
+---
+ board/freescale/imx8mp_owa5x/lpddr4_timing.c | 4 ++--
+ configs/imx8mp_owa5x_defconfig               | 2 +-
+ readme.txt                                   | 9 +++++++++
+ 3 files changed, 12 insertions(+), 3 deletions(-)
+
+diff --git a/board/freescale/imx8mp_owa5x/lpddr4_timing.c b/board/freescale/imx8mp_owa5x/lpddr4_timing.c
+index 880093712b..519a1b7ad1 100644
+--- a/board/freescale/imx8mp_owa5x/lpddr4_timing.c
++++ b/board/freescale/imx8mp_owa5x/lpddr4_timing.c
+@@ -1192,7 +1192,7 @@ struct dram_cfg_param ddr_fsp0_2d_cfg[] = {
+ 	{ 0x5400b, 0x2 },
+ 	{ 0x5400f, 0x100 },
+ 	{ 0x54010, 0x1f7f },
+-	{ 0x54012, 0x110 },
++	{ 0x54012, 0x310 }, /* Index 10, 2GB: 0x110, 4GB: 0x310 */
+ 	{ 0x54019, 0x2dd4 },
+ 	{ 0x5401a, 0x33 },
+ 	{ 0x5401b, 0x4866 },
+@@ -1204,7 +1204,7 @@ struct dram_cfg_param ddr_fsp0_2d_cfg[] = {
+ 	{ 0x54022, 0x4800 },
+ 	{ 0x54024, 0x16 },
+ 	{ 0x5402b, 0x1000 },
+-	{ 0x5402c, 0x1 },
++	{ 0x5402c, 0x3 }, /* Index 22, 2GB: 0x1, 4GB: 0x3 */
+ 	{ 0x54032, 0xd400 },
+ 	{ 0x54033, 0x332d },
+ 	{ 0x54034, 0x6600 },
+diff --git a/configs/imx8mp_owa5x_defconfig b/configs/imx8mp_owa5x_defconfig
+index 519446abc2..4989766b05 100644
+--- a/configs/imx8mp_owa5x_defconfig
++++ b/configs/imx8mp_owa5x_defconfig
+@@ -163,7 +163,7 @@ CONFIG_VIDEO_LCD_RAYDIUM_RM67191=n
+ CONFIG_VIDEO_ADV7535=n
+ CONFIG_SYS_WHITE_ON_BLACK=n
+ 
+-CONFIG_LOCALVERSION="-1.0.6"
++CONFIG_LOCALVERSION="-1.0.7"
+ # CONFIG_LOCALVERSION_AUTO is not set
+ #NAND CONFIGURATION
+ CONFIG_NAND_BOOT=y
+diff --git a/readme.txt b/readme.txt
+index 66fa413a03..66b9feeae5 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,3 +1,12 @@
++Version 1.0.7
++-------------
++21-07-2023
++   - board/freescale/imx8mp_owa5x/lpddr4_timing.c
++     Fix ddr_fsp0_2d_cfg[] for 4GB compatibility.
++   - configs/imx8mp_owa5x_defconfig
++     Set version to 1.0.7
++
++
+ Version 1.0.6
+ -------------
+ 06-06-2023
+-- 
+2.42.0
+

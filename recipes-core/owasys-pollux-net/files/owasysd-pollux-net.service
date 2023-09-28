@@ -1,0 +1,30 @@
+[Unit]
+Description     = owasysd-pollux-net service
+After           = syslog.target owasysd-pmsrv-ready.service network.target
+Requires        = pmsrv.service
+StopWhenUnneeded=no
+#ConditionPathExists=!/var/lock/owaapi.lck
+StartLimitInterval  = 5min
+StartLimitBurst     = 2
+StartLimitAction    = reboot
+PartOf          = pollux.target
+
+[Service]
+ExecStartPre    = sysctl net.ipv4.ping_group_range='0 0'
+ExecStartPre    = mkdir -p /var/log/pollux
+ExecStartPre    = mkdir -p /data/stats
+ExecStartPre    = mkdir -p /var/log/pollux/sms/in
+ExecStartPre    = mkdir -p /var/log/pollux/sms/out
+ExecStart       = /usr/bin/pollux-net --start -D6
+ExecStop        = /usr/bin/pollux-net -q
+StandardOutput  = null
+StandardError   = null
+
+# In case if it gets stopped, restart it immediately
+Restart     = on-failure
+RestartSec  = 120
+
+[Install]
+WantedBy    = pollux.target
+Alias       = pollux-net.service
+Alias       = polluxnet.service

@@ -1,0 +1,29 @@
+{
+   "net":{
+      "comment":"start: to simulate module start, reg, greg, ereg values, data",
+      "start": {
+         "comment": "error != 0 simulates an error for time in seconds or number of requests",
+         "error": 1,
+         "time": 300,
+         "requests": 2
+      },
+      
+      "reg":{
+         "value": 1,
+         "delay": 20
+      },
+      "greg":{
+         "value": 1,
+         "delay": 20
+      },
+      "ereg":{
+         "value": 0,
+         "delay": 20
+      },
+      "data":{
+         "enabled": true,
+         "delay": 20,
+         "ip": "63.22.55.44"
+      }
+   }
+}

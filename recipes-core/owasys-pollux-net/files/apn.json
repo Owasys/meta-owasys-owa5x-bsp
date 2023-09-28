@@ -1,0 +1,122 @@
+{
+   "dns":["8.8.8.8"],
+   "20601":{
+      "name": "Proximus",
+      "country":"BE",
+      "apns": [
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   },
+   "20801":{
+      "name": "Orange",
+      "country":"FR",
+      "apns": [
+         {"desc":"Standard","user":"orange","pass":"orange","apn":"orange.m2m.spec"}
+      ]
+   },
+   "20810":{
+      "name": "SFR",
+      "country":"FR",
+      "apns": [
+         {"desc":"Standard","user":"none","pass":"none","apn":"intrnet3g+"}
+      ]
+   },
+   "20820":{
+      "name": "BOUYGUES",
+      "country":"FR",
+      "apns": [
+         {"desc":"Standard","user":"none","pass":"none","apn":"pcebouygtel.com"}
+      ]
+   },
+   "20824":{
+      "name": "Monaco",
+      "country":"FR",
+      "apns": [
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   },
+   "21303":{
+      "name": "Andorra Tel",
+      "country":"AD",
+      "apns": [
+         {"desc":"Standard","user":"none","pass":"none","apn":"internet"}
+      ]
+   },
+   "21401":{
+      "name": "Vodafone",
+      "country":"ES",
+      "apns": [
+         {"desc":"Wireless Logic","user":"none","pass":"none","apn":"wlapn.com"}
+      ]
+   },
+   "21403":{
+      "name": "Orange",
+      "country":"ES",
+      "apns": [
+         {"desc":"Standard","user":"orange","pass":"orange","apn":"orangeworld"}
+      ]
+   },
+   "21407":{
+      "name": "MOVISTAR",
+      "country":"ES",
+      "dns1":"8.8.8.8",
+      "dns2":"1.1.1.1",
+      "apns": [
+         {"desc":"Standard","user":"MOVISTAR","pass":"MOVISTAR","apn":"movistar.es"},
+         {"desc":"Kite Standard APN","apn":"gppsm2m.telefonica.com"}
+      ]
+   },
+   "22201":{
+      "name": "Tim Telecom",
+      "country":"IT",
+      "apns": [
+         {"desc":"Standard","user":"none","pass":"none","apn":"wap.tim.it"},
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   },
+
+   "22801":{
+      "name": "Swisscom",
+      "country":"CH",
+      "apns": [
+         {"desc":"Standard","user":"none","pass":"none","apn":"gprs.swisscom.ch"}
+      ]
+   },
+   "23450":{
+      "name": "Jersey Telecom",
+      "country": "GB",
+      "apns":[
+         {"desc":"Stream","user":"streamip","pass":"streamip","apn":"stream.co.uk"},
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   },
+   "24020":{
+      "name": "Wireless Maingate",
+      "apns": [
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   },
+   "310012":{
+      "name": "Verizon",
+      "country": "US",
+      "cid": 3,
+      "apns":[
+         {"desc":"vzwims","apn":"vzwims"},
+         {"desc":"vzwadmin","apn":"vzwadmin"},
+         {"desc":"vzwinternet","apn":"vzwinternet", "cid":3},
+         {"desc":"vzwapp","apn":"vzwapp"}
+      ]
+   },
+   "42402":{
+      "name": "UAE-ETILASAT",
+      "apns": [
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   },
+   "90131":{
+      "name": "International",
+      "apns": [
+         {"desc":"Sierra Wireless","user":"none","pass":"none","apn":"internet.swir"}
+      ]
+   }
+}

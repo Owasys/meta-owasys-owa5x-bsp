@@ -1,0 +1,13 @@
+/var/log/pollux/pollux-net.log 
+/var/log/pollux/libgsm.log
+/var/log/pollux/net.log
+/var/log/pollux/sms/in/*
+/var/log/pollux/sms/out/*
+{
+  rotate 4
+  weekly
+  maxsize 5M
+  compress
+  missingok
+  notifempty
+}
