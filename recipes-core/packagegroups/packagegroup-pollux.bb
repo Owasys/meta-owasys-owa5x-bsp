@@ -9,5 +9,5 @@ PACKAGES = " packagegroup-pollux \
 RDEPENDS:${PN} = "\
     owasys-libpollux \
     owasys-pollux-net \
-    pollux-gps \
+    owasys-pollux-gps \
 "

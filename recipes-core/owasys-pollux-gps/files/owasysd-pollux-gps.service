@@ -1,6 +1,6 @@
 [Unit]
-Description     = owasysd-pollux-net service
-After           = syslog.target owasysd-pmsrv-ready.service network.target
+Description     = owasysd-pollux-gps service
+After           = syslog.target owasysd-pmsrv-ready.service
 Requires        = pmsrv.service
 StopWhenUnneeded=no
 #ConditionPathExists=!/var/lock/owaapi.lck
@@ -10,12 +10,9 @@ StartLimitAction    = reboot
 PartOf          = pollux.target
 
 [Service]
-ExecStartPre    = sysctl net.ipv4.ping_group_range='0 0'
 ExecStartPre    = mkdir -p /var/log/pollux
-ExecStartPre    = mkdir -p /var/lib/owasys/pollux/sms/in
-ExecStartPre    = mkdir -p /var/lib/owasys/pollux/sms/out
-ExecStart       = /usr/bin/pollux-net --start -D6
-ExecStop        = /usr/bin/pollux-net -q
+ExecStart       = /usr/bin/pollux-gps --start
+ExecStop        = /usr/bin/pollux-gps -q
 StandardOutput  = null
 StandardError   = null
 
@@ -25,5 +22,5 @@ RestartSec  = 120
 
 [Install]
 WantedBy    = pollux.target
-Alias       = pollux-net.service
-Alias       = polluxnet.service
+Alias       = pollux-gps.service
+Alias       = polluxgps.service

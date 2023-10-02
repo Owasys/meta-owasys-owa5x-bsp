@@ -12,8 +12,7 @@
          "internet"     :  true,
          "code"         :  "",
          "whitelist"    :  "",
-         "restart_me_algo": 0,
-         "stats"        : "/data/stats"
+         "restart_me_algo": 0
       }
    }
 }

@@ -9,7 +9,7 @@ inherit core-image image_types
 IMAGE_OVERHEAD_FACTOR ?= "1.0"
 IMAGE_ROOTFS_SIZE ?= "460000"
 IMAGE_FSTYPES += " tar.gz "
-IMAGE_INSTALL = "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL} kernel-devicetree"
+IMAGE_INSTALL = " packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL} kernel-devicetree"
 IMAGE_INSTALL += "  systemd-analyze iw mtd-utils mtd-utils-ubifs can-utils openssh sudo \
                     rsync ppp alsa-utils iproute2 net-tools e2fsprogs iptables \
                     bluez5 imx-kobs inetutils libev e2fsprogs-resize2fs redis \

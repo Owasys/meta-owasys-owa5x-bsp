@@ -6,8 +6,9 @@ DEPENDS = "dbus owasys-libpollux paho-mqtt-c "
 RDEPENDS:${PN} = "dbus libev owasys-libpollux hiredis "
 
 SRC_URI = " file://mqtt.json \
-            file://pollux-dbus-mqtt.json \
             file://polluxc-mqtt \
+            file://pollux.target \
+            file://owasysd-polluxc-mqtt.service \
 "
 
 do_install() {
@@ -19,10 +20,13 @@ do_install() {
     # Install configuration files
     install -d ${D}${bindir}
     install -d ${D}${sysconfdir}/pollux
-    install -d ${D}${sysconfdir}/pollux.d
-    
-    install ${WORKDIR}/mqtt.json                    ${D}${sysconfdir}/pollux/
-    install ${WORKDIR}/pollux-dbus-mqtt.json        ${D}${sysconfdir}/pollux/pollux.d
+    install -d ${D}${sysconfdir}/systemd/system
+        
+    install ${WORKDIR}/mqtt.json                           ${D}${sysconfdir}/pollux/
+    install ${WORKDIR}/pollux.target                       ${D}${sysconfdir}/systemd/system/
+    install ${WORKDIR}/owasysd-polluxc-mqtt.service        ${D}${sysconfdir}/systemd/system/
+
+    ln -s -r ${D}/${sysconfdir}/systemd/system/owasysd-polluxc-mqtt.service     ${D}/${sysconfdir}/systemd/system/polluxc-mqtt.service 
 }
 
 FILES_${PN} += "${bindir}/polluxc-mqtt"

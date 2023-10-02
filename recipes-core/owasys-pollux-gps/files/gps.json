@@ -1,0 +1,12 @@
+{
+   "name" : "pollux-gps",
+   "gps_freq": 1,
+   "update_date_freq": 60,
+   "fence_move": 35,
+   "gps_jamming": 1,
+   "h_accu": 28,
+   "posfix":["D2","D3","G2","G3"],
+   "static_threshold": 100,
+   "dynamic_model": 4,
+   "measurement_rate":1
+}

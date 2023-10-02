@@ -16,12 +16,12 @@
       "scan": 1000,
       "wdt": 300
    },
-   "polluxc-tb":{
+   "polluxc-mqtt": {
       "enable": 1,
-      "file": "/etc/pollux/tb.json",
-      "socket": "/tmp/polluxc-tb.sock",
-      "pub": "tb",
-      "shmid": 20004,
-      "scan": 300
-  }
+      "file": "/etc/pollux/mqtt.json",
+      "socket": "/tmp/pollux-mqtt.sock",
+      "pub": "mqtt",
+      "shmid": 10103,
+      "scan": 1000
+   }
 }
