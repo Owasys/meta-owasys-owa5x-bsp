@@ -6,13 +6,17 @@ DEPENDS += " dbus "
 FILESEXTRAPATHS:prepend := "${THISDIR}/src:"
 
 SRC_URI = " file://libpollux.so \
+            file://pollux.target \
             file://pollux-dbus.json \
 "
 
 S = "${WORKDIR}"
 
 INSANE_SKIP:${PN} += "already-stripped dev-so"
+inherit systemd
 
+SYSTEMD_AUTO_ENABLE = "enable"
+SYSTEMD_SERVICE:${PN} ="pollux.target"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
@@ -29,6 +33,7 @@ do_install() {
   install -d ${D}${sysconfdir}/dbus-1/system.d
   install -d ${D}${sysconfdir}/systemd/system
   
+  install ${WORKDIR}/pollux.target    ${D}${sysconfdir}/systemd/system/ 
   install ${WORKDIR}/pollux-dbus.json ${D}${sysconfdir}/pollux/
   install ${WORKDIR}/libpollux.so     ${D}${libdir}
 

@@ -5,6 +5,8 @@ INSANE_SKIP:${PN} += "already-stripped"
 DEPENDS = "dbus owasys-libpollux paho-mqtt-c "
 RDEPENDS:${PN} = "dbus libev owasys-libpollux hiredis "
 
+inherit systemd
+
 SRC_URI = " file://mqtt.json \
             file://polluxc-mqtt \
             file://pollux.target \

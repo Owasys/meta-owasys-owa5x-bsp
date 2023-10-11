@@ -14,6 +14,8 @@ INSANE_SKIP:${PN} += "already-stripped"
 DEPENDS = "dbus owasys-libs paho-mqtt-c pkgconfig-native hiredis owasys-libpollux libmnl "
 RDEPENDS:${PN} = "dbus libev owasys-libs hiredis libmnl owasys-libpollux "
 
+inherit systemd
+
 SYSTEMD_AUTO_ENABLE = "disable"
 SYSTEMD_SERVICE:${PN} ="owasysd-pollux-net.service"
 

@@ -1,6 +1,6 @@
 [Unit]
 Description     = owasysd-pollux-net service
-After           = syslog.target owasysd-pmsrv-ready.service network.target
+After           = owasysd-pmsrv-ready.service network.target
 Requires        = pmsrv.service
 StopWhenUnneeded=no
 #ConditionPathExists=!/var/lock/owaapi.lck
