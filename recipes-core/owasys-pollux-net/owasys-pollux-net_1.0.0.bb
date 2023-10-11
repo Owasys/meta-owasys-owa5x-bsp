@@ -4,15 +4,17 @@ LIC_FILES_CHKSUM ="file://${COMPANY_CUSTOM_LICENSES}/OWASYS_Propietary_SW_Licens
 SRC_URI = " file://apn.json \
             file://net.json \
             file://test.json \
-            file://pollux-net.bin \
+            file://pollux-net \
             file://pollux-net.conf \
             file://pollux-net.logrotate \
             file://owasysd-pollux-net.service \
 "
 
 INSANE_SKIP:${PN} += "already-stripped"
-DEPENDS = "dbus owasys-libs paho-mqtt-c hiredis owasys-libpollux "
+DEPENDS = "dbus owasys-libs paho-mqtt-c pkgconfig-native hiredis owasys-libpollux libmnl "
 RDEPENDS:${PN} = "dbus libev owasys-libs hiredis libmnl owasys-libpollux "
+
+inherit systemd
 
 SYSTEMD_AUTO_ENABLE = "disable"
 SYSTEMD_SERVICE:${PN} ="owasysd-pollux-net.service"
@@ -21,7 +23,7 @@ do_install() {
 
     # Install binaries
     install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/pollux-net.bin ${D}${bindir}/pollux-net
+    install -m 0755 ${WORKDIR}/pollux-net ${D}${bindir}/pollux-net
 
     # Install configuration files
     install -d ${D}${bindir}
@@ -40,4 +42,4 @@ do_install() {
 
 }
 
-FILES_${PN} += "${bindir}/owasys-pollux-net"
+FILES_${PN} += "${bindir}/pollux-net"
