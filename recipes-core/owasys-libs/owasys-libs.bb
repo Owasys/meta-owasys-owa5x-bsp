@@ -8,7 +8,7 @@ COMPATIBLE_MACHINE = "(owa5x)"
 
 SRC_URI = " file://libFMS_Module.so.1.1.5 \
             file://libGPS2_Module.so.1.0.18 \
-            file://libGSM_Module.so.1.0.28 \
+            file://libGSM_Module.so.1.0.29 \
             file://libINET_Module.so.1.0.6 \
             file://libIOs_Module.so.1.0.17 \
             file://libRTU_Module.so.1.0.20 \
@@ -31,7 +31,7 @@ do_install() {
     # install the application into the /lib/ folder with default permissions
     install ${WORKDIR}/libFMS_Module.so.1.1.5 ${D}${libdir}/owasys
     install ${WORKDIR}/libGPS2_Module.so.1.0.18 ${D}${libdir}/owasys
-    install ${WORKDIR}/libGSM_Module.so.1.0.28 ${D}${libdir}/owasys
+    install ${WORKDIR}/libGSM_Module.so.1.0.29 ${D}${libdir}/owasys
     install ${WORKDIR}/libINET_Module.so.1.0.6 ${D}${libdir}/owasys
     install ${WORKDIR}/libIOs_Module.so.1.0.17 ${D}${libdir}/owasys
     install ${WORKDIR}/libRTU_Module.so.1.0.20 ${D}${libdir}/owasys
@@ -41,7 +41,7 @@ do_install() {
     install -d ${D}/${nonarch_base_libdir}
     ln -s -r ${D}/${libdir}/owasys/libFMS_Module.so.1.1.5     ${D}${nonarch_base_libdir}/libFMS_Module.so
     ln -s -r ${D}/${libdir}/owasys/libGPS2_Module.so.1.0.18   ${D}${nonarch_base_libdir}/libGPS2_Module.so
-    ln -s -r ${D}/${libdir}/owasys/libGSM_Module.so.1.0.28    ${D}${nonarch_base_libdir}/libGSM_Module.so
+    ln -s -r ${D}/${libdir}/owasys/libGSM_Module.so.1.0.29    ${D}${nonarch_base_libdir}/libGSM_Module.so
     ln -s -r ${D}/${libdir}/owasys/libINET_Module.so.1.0.6    ${D}${nonarch_base_libdir}/libINET_Module.so
     ln -s -r ${D}/${libdir}/owasys/libIOs_Module.so.1.0.17    ${D}${nonarch_base_libdir}/libIOs_Module.so
     ln -s -r ${D}/${libdir}/owasys/libRTU_Module.so.1.0.20    ${D}${nonarch_base_libdir}/libRTU_Module.so

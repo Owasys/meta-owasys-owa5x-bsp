@@ -3,9 +3,9 @@ LICENSE = "Proprietary"
 LIC_FILES_CHKSUM ="file://${COMPANY_CUSTOM_LICENSES}/OWASYS_Propietary_SW_License_Agreement.md;md5=203a753c44e11367199c31c2168fa959"
 inherit systemd
 
-RDEPENDS:${PN} += "bash"
-SYSTEMD_AUTO_ENABLE = "disable"
-SYSTEMD_SERVICE:${PN} ="owasysd-timesync.service"
+RDEPENDS:${PN} += "bash rtc-tools "
+SYSTEMD_AUTO_ENABLE = "enable"
+SYSTEMD_SERVICE:${PN} ="owasysd-timesync.service owasysd-timesync.timer "
 
 SRC_URI:append = " file://owasysd-timesync.service \ 
                    file://owasysd-timesync.timer \
@@ -19,8 +19,8 @@ do_install () {
    
    install -m 644 ${WORKDIR}/owasysd-timesync.service ${D}${sysconfdir}/systemd/system
    install -m 644 ${WORKDIR}/owasysd-timesync.timer   ${D}${sysconfdir}/systemd/system
-   install -m 755 ${WORKDIR}/owasys-timesync.sh      ${D}${bindir}
+   install -m 755 ${WORKDIR}/owasys-timesync.sh       ${D}${bindir}
 
 }
 
-SYSTEMD_SERVICE:${PN} = "owasysd-timesync.service"
+#SYSTEMD_SERVICE:${PN} = "owasysd-timesync.service"

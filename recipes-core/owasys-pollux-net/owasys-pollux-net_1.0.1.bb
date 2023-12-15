@@ -11,8 +11,8 @@ SRC_URI = " file://apn.json \
 "
 
 INSANE_SKIP:${PN} += "already-stripped"
-DEPENDS = "dbus owasys-libs paho-mqtt-c pkgconfig-native hiredis owasys-libpollux libmnl "
-RDEPENDS:${PN} = "dbus libev owasys-libs hiredis libmnl owasys-libpollux "
+DEPENDS = "dbus owasys-libs pkgconfig-native owasys-libpollux libmnl "
+RDEPENDS:${PN} = "dbus libev owasys-libs libmnl owasys-libpollux "
 
 inherit systemd
 

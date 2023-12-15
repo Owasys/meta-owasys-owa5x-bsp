@@ -7,6 +7,7 @@ LIC_FILES_CHKSUM ="file://${COMPANY_CUSTOM_LICENSES}/OWASYS_Propietary_SW_Licens
 FILESEXTRAPATHS:prepend := "${THISDIR}/src:"
 SRC_URI = " file://hwclktosys \
             file://sysclktohw \
+            file://owasys-rtc \
 "
 
 S = "${WORKDIR}"
@@ -20,6 +21,7 @@ do_install() {
     # install the application into the /usr/bin folder with default permissions
     install ${WORKDIR}/sysclktohw ${D}${bindir}
     install ${WORKDIR}/hwclktosys ${D}${bindir}
+    install ${WORKDIR}/owasys-rtc ${D}${bindir}
     # create alias for this tool
     install -d ${D}/${base_bindir}
     ln -s ${bindir}/sysclktohw    ${D}${base_bindir}/owasys-sysclktohw

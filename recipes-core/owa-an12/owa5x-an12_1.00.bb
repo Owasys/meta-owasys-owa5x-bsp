@@ -5,7 +5,7 @@ LICENSE = "Proprietary"
 LIC_FILES_CHKSUM ="file://${COMPANY_CUSTOM_LICENSES}/OWASYS_Propietary_SW_License_Agreement.md;md5=203a753c44e11367199c31c2168fa959"
 FILESEXTRAPATHS:prepend := "${THISDIR}/src:"
 
-SRC_URI = "file://owa5x_an12 \
+SRC_URI = "file://owasys-an12 \
 "
 
 S = "${WORKDIR}"
@@ -18,10 +18,10 @@ do_install() {
     install -m 0755 -d ${D}${sysconfdir}
 
     # install the application into the /usr/bin folder with default permissions
-    install ${WORKDIR}/owa5x_an12 ${D}${bindir}
+    install ${WORKDIR}/owasys-an12 ${D}${bindir}
     # create alias for this tool
     install -d ${D}/${base_bindir}
-    ln -s ${bindir}/owa5x_an12    ${D}${base_bindir}/owasys-an12
+    ln -s ${bindir}/owasys-an12    ${D}${base_bindir}/owa5x_an12
 }
 
 
