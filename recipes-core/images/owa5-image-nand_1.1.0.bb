@@ -11,10 +11,11 @@ IMAGE_ROOTFS_SIZE ?= "460000"
 IMAGE_FSTYPES += " tar.gz "
 IMAGE_INSTALL = " packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL} kernel-devicetree"
 IMAGE_INSTALL += "  systemd-analyze iw mtd-utils mtd-utils-ubifs can-utils openssh sudo \
-                    rsync ppp alsa-utils iproute2 net-tools e2fsprogs iptables \
+                    rsync ppp alsa-utils iproute2 net-tools e2fsprogs iptables cronie \
                     bluez5 imx-kobs inetutils libev e2fsprogs-resize2fs redis \
                     hiredis tpm2-abrmd tpm2-tools tpm2-tss packagegroup-core-base-utils \
                     tpm2-tss-engine tpm2-openssl tpm2-pkcs11 opensc u-boot-fw-utils lrzsz vim \
+                    wireguard-tools \
 "
 IMAGE_INSTALL:append = " \
                         imx-boot-owasys \
